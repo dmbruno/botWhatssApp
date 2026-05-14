@@ -54,7 +54,7 @@ app.post(
     res.status(200).json({ ok: true });
 
     setImmediate(() => {
-      processWebhook(parsed.data).catch((err) => {
+      processWebhook(parsed.data).catch((err: unknown) => {
         console.error('[webhook] error procesando en background:', err);
       });
     });
